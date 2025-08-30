@@ -1,0 +1,42 @@
+.skills {
+    padding-top: 75px;
+    padding-bottom: 75px;
+    background: var(--background);
+    background-image: url("./assets/BackgroundVectors.png");
+    overflow: hidden;
+    background-position: center -65px;
+    background-repeat: no-repeat;
+
+    .content {
+        display: grid;
+        grid-template-columns: 0.5fr 2fr 0.5fr;
+        gap: 40px;
+
+        .title {
+            color: var(--secondary-color);
+            grid-column: 2 / 3;
+        }
+
+        .skills-container {
+            grid-column: 2 / 3;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            gap: 30px;
+            justify-content: center;
+            align-items: center;
+
+            .icon {
+                height: 80px;
+                width: auto;
+                border-radius: 25px;
+                transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+
+                &:hover {
+                    transform: scale(1.5) translateY(-10px);
+                    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+                }
+            }
+        }
+    }
+}

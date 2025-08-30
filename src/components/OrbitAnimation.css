@@ -1,0 +1,49 @@
+.orbit-container {
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  width: auto;
+  height: 400px;
+  padding: 20px 0;
+  margin-left: 20px;
+}
+
+.orbit-wrapper {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.orbit-center {
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.orbit-path {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+.orbit-image {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 140px;
+  height: 140px;
+  object-fit: cover;
+  transform: translate(-50%, -50%);
+  transition: transform 0.1s linear;
+  z-index: 1;
+}

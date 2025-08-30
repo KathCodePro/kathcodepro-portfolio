@@ -1,0 +1,32 @@
+.projects {
+    .content {
+        display: grid;
+        grid-template-columns: 0.5fr 2fr 0.5fr;
+        gap: 40px;
+
+        .title {
+            color: var(--secondary-color);
+            grid-column: 2 / 3;
+        }
+
+        .elements {
+            grid-column: 2 / 3;
+        }
+
+    }
+}
+
+@media screen and (max-width: 570px) {
+    & {
+        .projects {
+            .content {
+
+                .elements {
+                    grid-column: 1 / 4;
+                    padding-right: 5%;
+                    padding-left: 5%;
+                }
+            }
+        }
+    }
+}

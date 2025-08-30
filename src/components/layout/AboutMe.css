@@ -1,0 +1,152 @@
+.about-me {
+    margin-top: 75px;
+
+    &.visible .messages-wrapper .message-container {
+        animation: fadeInSlideUp 0.5s ease-out forwards;
+        opacity: 1;
+    }
+
+    .content {
+        display: grid;
+        grid-template-columns: 0.5fr 1fr 1fr 0.5fr;
+        gap: 40px;
+
+        .title {
+            color: var(--secondary-color);
+            grid-column: 2 / 4;
+        }
+
+        .technologies-wrapper {
+            grid-column: 3 / 4;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            .button {
+                align-items: center;
+                justify-content: center;
+
+                a {
+                    font-size: 18px;
+                    text-decoration: none;
+                    color: var(--shade-8);
+                    padding: 5px 10px;
+                    font-weight: 500;
+
+                    &:hover {
+                        text-decoration: none;
+                    }
+                }
+            }
+
+            img {
+                width: 150px;
+            }
+        }
+
+        .messages-wrapper {
+            grid-column: 2 / 3;
+            display: flex;
+            flex-direction: column;
+            gap: 7px;
+
+            &>.message-container {
+                opacity: 0;
+            }
+
+            &>.message-container:nth-child(1) {
+                animation-delay: 0.5s;
+            }
+
+            &>.message-container:nth-child(2) {
+                animation-delay: 1.5s;
+            }
+
+            &>.message-container:nth-child(3) {
+                animation-delay: 2.5s;
+            }
+
+            &>.message-container:nth-child(4) {
+                animation-delay: 3.5s;
+            }
+
+            .message-container {
+                padding: 10px;
+                background: rgba(242, 189, 43, 0.60);
+                border-radius: 10px 10px 10px 10px;
+
+                .top-message {
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    justify-content: space-between;
+
+                    .icon-title {
+                        display: flex;
+                        align-items: center;
+                        gap: 5px;
+
+                        img {
+                            justify-content: flex-start;
+                            display: flex;
+                            width: 25px;
+                        }
+
+                        .message-title {
+                            color: var(--shade-7);
+                            font-weight: 500;
+                            font-size: 15px;
+                        }
+                    }
+
+                    .message-time {
+                        color: var(--shade-7);
+                        font-weight: 500;
+                        font-size: 13px;
+                    }
+                }
+
+                p {
+                    font-size: 18px;
+                    color: var(--shade-9);
+                    padding: 2px 25px;
+                }
+            }
+        }
+    }
+
+
+}
+
+@keyframes fadeInSlideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .about-me {
+        & .content {
+
+            .messages-wrapper {
+                grid-column: 2 / 4;
+            }
+
+            .technologies-wrapper {
+                grid-column: 2 / 4;
+
+                .technologies {
+                    display: none;
+                }
+            }
+        }
+    }
+
+}

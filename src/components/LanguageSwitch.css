@@ -1,0 +1,48 @@
+.lang-menu {
+    position: relative;
+    width: 130px;
+    z-index: 3;
+
+    .selector {
+        display: flex;
+        align-items: center;
+        padding: 2px 12px;
+        border: 1px solid var(--shade-8);
+        border-radius: 30px;
+        background: var(--background);
+        gap: 6px;
+        cursor: pointer;
+    }
+
+    img {
+        width: 30px;
+    }
+
+    ul.hide {
+        display: none;
+        padding: 4px 0px;
+    }
+
+    ul.show {
+        display: block;
+        padding: 4px 0px;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+    }
+
+    li {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 6px;
+        cursor: pointer;
+        background: var(--background);
+
+    }
+
+    li:hover {
+        background: var(--primary-color);
+    }
+}

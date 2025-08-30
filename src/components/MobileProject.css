@@ -1,0 +1,189 @@
+.project {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 15px;
+
+    .device-container {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+
+        .carousel-btn {
+            border: none;
+            background: var(--background);
+
+            img {
+                height: 40px;
+            }
+        }
+
+        .phone-container {
+            position: relative;
+            width: 240px;
+            height: 495px;
+            overflow: visible;
+
+            .phone-frame {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                z-index: 2;
+                pointer-events: none;
+            }
+
+            .carousel-container {
+                position: absolute;
+                top: 17px;
+                left: 10px;
+                width: 221px;
+                height: 460px;
+                overflow: hidden;
+                border-radius: 20px;
+                z-index: 1;
+                transform: translateZ(0);
+                transform: translateZ(0);
+                backface-visibility: hidden;
+                perspective: 1000px;
+            }
+
+            .carousel-track {
+                position: relative;
+                width: 100%;
+                height: 100%;
+            }
+
+            .carousel-image {
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+                object-position: center;
+                border-radius: 20px;
+                transform: translateZ(0);
+            }
+
+            .carousel-slide {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                opacity: 0;
+                transition: transform 0.5s ease, opacity 0.5s ease;
+                border-radius: 20px;
+                pointer-events: none;
+                transform: translateZ(0);
+                backface-visibility: hidden;
+            }
+
+            .slide-current {
+                transform: translateX(0);
+                opacity: 1;
+                z-index: 2;
+            }
+
+            .slide-exit-left {
+                transform: translateX(-100%);
+                opacity: 0;
+                z-index: 1;
+            }
+
+            .slide-exit-right {
+                transform: translateX(100%);
+                opacity: 0;
+                z-index: 1;
+            }
+
+            .slide-enter-right {
+                transform: translateX(100%);
+                opacity: 0;
+                z-index: 0;
+                transition: transform 0.5s ease, opacity 0.5s ease;
+            }
+
+            .slide-enter-left {
+                transform: translateX(-100%);
+                opacity: 0;
+                z-index: 0;
+                transition: transform 0.5s ease, opacity 0.5s ease;
+            }
+
+            .slide-hidden {
+                transform: translateX(100%);
+                opacity: 0;
+                z-index: 0;
+                transition: none;
+            }
+        }
+    }
+
+    .description {
+        grid-column: 2 / 3;
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        margin-top: 10px;
+        gap: 15px;
+
+        .subtitle {
+            color: var(--primary-color);
+            font-size: clamp(25px, 4vw, 35px);
+            text-shadow:
+                3px 3px 0px var(--secondary-color)
+        }
+
+        .features {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--secondary-color);
+        }
+
+        .text {
+            color: var(--shade-8);
+            font-size: 16px;
+            line-height: 25px;
+        }
+
+        ul {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        li {
+            list-style-type: circle;
+            margin-left: 15px;
+        }
+    }
+
+    .technologies {
+        grid-column: 1 / 3;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: start;
+
+        img {
+            height: 36px;
+            width: auto;
+            margin: 3px;
+            display: inline-block;
+        }
+    }
+}
+
+@media screen and (max-width: 800px) {
+    & {
+        .project {
+            .device-container {
+                grid-column: 1 / 3;
+            }
+
+            .description {
+                grid-column: 1 / 3;
+            }
+        }
+    }
+}
