@@ -4,7 +4,7 @@ import AboutMe from "./components/layout/Aboutme";
 import Projects from "./components/layout/Projects";
 import ContactMe from "./components/layout/ContactMe";
 import Skills from "./components/layout/Skills";
-
+import "./App.css";
 
 
 function App() {
@@ -14,9 +14,11 @@ function App() {
         <Header />
         <main>
           <Hero />
-          <AboutMe />
-          <Skills />
-          <Projects />
+          <div className="background-container">
+            <AboutMe />
+            <Skills />
+            <Projects />
+          </div>
           <ContactMe />
         </main>
       </div>

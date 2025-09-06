@@ -2,16 +2,39 @@ import "./ContactMe.css";
 import { useTranslation } from "react-i18next";
 import { DotLottieReact } from '@lottiefiles/dotlottie-react';
 import emailjs from '@emailjs/browser';
-import { useRef } from "react";
+import PhoneInput from "react-phone-input-2";
+import { parsePhoneNumber } from "libphonenumber-js/min";
+import "react-phone-input-2/lib/style.css";
+import { useRef, useState } from 'react';
 
 const ContactMe = () => {
     const { t } = useTranslation();
     const form = useRef();
+    const [PhoneNumber, setPhoneNumber] = useState('');
+    const [valid, setValid] = useState(true)
+
+    const handleChange = (value) => {
+        setPhoneNumber(value);
+        setValid(validatePhoneNumber(value));
+    };
+
+    const validatePhoneNumber = (phoneNumber) => {
+        try {
+            const phoneNumberWithPlus = phoneNumber.startsWith('+') ? phoneNumber : `+${phoneNumber}`;
+            const parsed = parsePhoneNumber(phoneNumberWithPlus);
+            return parsed?.isValid() || false;
+        } catch (error) {
+            return false;
+        }
+
+    }
+
     const sendMessage = (e) => {
         e.preventDefault();
 
         const templateParams = {
             name: form.current.name.value,
+            phone: PhoneNumber,
             email: form.current.email.value,
             message: form.current.message.value,
         };
@@ -23,6 +46,7 @@ const ContactMe = () => {
             .then(() => {
                 alert(t("contactMe.successMessage"));
                 form.current.reset();
+                setPhoneNumber("");
             })
             .catch((error) => {
                 console.log("Error sending message:", error.text);
@@ -43,6 +67,11 @@ const ContactMe = () => {
                             <div className="form-group">
                                 <label htmlFor="name">{t("contactMe.name")}</label>
                                 <input type="text" id="name" name="name" required />
+                            </div>
+                            <div className="phone-input phone-input-container">
+                                <label htmlFor="phone">{t("contactMe.phone")}</label>
+                                <PhoneInput country="us" value={PhoneNumber} onChange={handleChange} inputProps={{ required: false }} />
+                                {!valid && <p className="error">Please enter a valid phone number.</p>}
                             </div>
                             <div className="form-group">
                                 <label htmlFor="email">{t("contactMe.email")}</label>

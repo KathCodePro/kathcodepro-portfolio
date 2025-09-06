@@ -17,7 +17,9 @@ i18n.use(LanguageDetector).use(initReactI18next).init({
                 hero: {
                     greeting: "Hi There!",
                     name: "I'm Kathryn Palomo",
-                    developer: "Mobile Developer"
+                    developer: "Mobile Developer",
+                    downloadCV: "Download CV",
+                    contactMe: "E-mail Me"
                 },
                 aboutMe: {
                     aboutme: "About Me",
@@ -26,7 +28,6 @@ i18n.use(LanguageDetector).use(initReactI18next).init({
                     third: "You'll find me adept with MVVM and Jetpack Compose, and comfortable with tools like Git, Firebase, REST APIs, and Dagger Hilt.",
                     fourth: "I'm constantly learning and always looking for the next challenge.",
                     messageTime: "now",
-                    downloadCV: "Download CV"
                 },
                 skills: {
                     title: "Skills & Tools",
@@ -48,6 +49,7 @@ i18n.use(LanguageDetector).use(initReactI18next).init({
                 contactMe: {
                     title: "Contact Me",
                     name: "Name",
+                    phone: "Phone Number (Optional)",
                     email: "E-mail",
                     message: "Message",
                     send: "Send",
@@ -67,7 +69,9 @@ i18n.use(LanguageDetector).use(initReactI18next).init({
                 hero: {
                     greeting: "¡Hola!",
                     name: "Soy Kathryn Palomo",
-                    developer: "Desarrolladora Movil"
+                    developer: "Desarrolladora Móvil",
+                    downloadCV: "Descargar CV",
+                    contactMe: "Enviame un E-mail"
                 },
                 aboutMe: {
                     aboutme: "Sobre Mi",
@@ -76,7 +80,6 @@ i18n.use(LanguageDetector).use(initReactI18next).init({
                     third: "Me he interesado por las ultimas tecnologias como Jetpack Compose y suelo trabajar con arquitecturas como MVVM. Me siento cómoda con herramientas como Git, Firebase, REST APIs y Dagger Hilt.",
                     fourth: "Actualmente me encuentro desarrollando nuevos conocimientos en areas como React Native y Kotlin Multiplataforma.",
                     messageTime: "ahora",
-                    downloadCV: "Descargar CV"
                 },
                 skills: {
                     title: "Lenguajes y Herramientas",
@@ -98,6 +101,7 @@ i18n.use(LanguageDetector).use(initReactI18next).init({
                 contactMe: {
                     title: "Contactame",
                     name: "Nombre",
+                    phone: "Telefono (Opcional)",
                     email: "Correo",
                     message: "Mensaje",
                     send: "Enviar",

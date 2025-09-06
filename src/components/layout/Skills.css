@@ -1,11 +1,6 @@
 .skills {
-    padding-top: 75px;
-    padding-bottom: 75px;
-    background: var(--background);
-    background-image: url("./assets/BackgroundVectors.png");
-    overflow: hidden;
-    background-position: center -65px;
-    background-repeat: no-repeat;
+    padding-top: 30px;
+    padding-bottom: 30px;
 
     .content {
         display: grid;

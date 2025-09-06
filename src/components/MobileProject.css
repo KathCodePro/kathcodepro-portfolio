@@ -9,9 +9,10 @@
         align-items: center;
         justify-content: center;
 
+
         .carousel-btn {
             border: none;
-            background: var(--background);
+            background: transparent;
 
             img {
                 height: 40px;
@@ -20,7 +21,7 @@
 
         .phone-container {
             position: relative;
-            width: 240px;
+            width: 250px;
             height: 495px;
             overflow: visible;
 
@@ -38,8 +39,8 @@
                 position: absolute;
                 top: 17px;
                 left: 10px;
-                width: 221px;
-                height: 460px;
+                width: 225px;
+                height: 462px;
                 overflow: hidden;
                 border-radius: 20px;
                 z-index: 1;
@@ -128,10 +129,11 @@
         gap: 15px;
 
         .subtitle {
-            color: var(--primary-color);
+            color: var(--secondary-color);
             font-size: clamp(25px, 4vw, 35px);
             text-shadow:
-                3px 3px 0px var(--secondary-color)
+                2px 1px 0px #78947b;
+            font-weight: 480;
         }
 
         .features {

@@ -64,12 +64,6 @@ const AboutMe = () => {
                         <div className="technologies">
                             <OrbitAnimation />
                         </div>
-                        <div className="button">
-                            <a
-                                href="./CV Kathryn Palomo.pdf"
-                                download="CV Kathryn Palomo.pdf"
-                            >{t("aboutMe.downloadCV")}</a>
-                        </div>
                     </div>
                 </div>
             </section>

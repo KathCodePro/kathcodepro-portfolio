@@ -1,5 +1,6 @@
 .about-me {
-    margin-top: 75px;
+    padding-top: 70px;
+    padding-bottom: 30px;
 
     &.visible .messages-wrapper .message-container {
         animation: fadeInSlideUp 0.5s ease-out forwards;

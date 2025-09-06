@@ -31,9 +31,16 @@ const Projects = () => {
                             features_title={t("projects.project1.features_title")}
                             features={t("projects.project1.features", { returnObjects: true })}
                             images={[
-                                "./assets/Inventory.png",
-                                "./assets/Registro.png",
-                                "./assets/Gestion.png",
+                                "./assets/LoginApp.png",
+                                "./assets/RegistroApp.png",
+                                "./assets/PorAprobarApp.png",
+                                "./assets/InventoryApp.png",
+                                "./assets/AddToolApp.png",
+                                "./assets/GestionApp.png",
+                                "./assets/UsersApp.png",
+                                "./assets/ModifyUserApp.png",
+                                "./assets/ReportesApp.png",
+                                "./assets/TransaccionesApp.png",
                             ]}
                             technologies={tech1}
                         />
